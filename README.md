@@ -5,7 +5,7 @@ Control your Docker containers directly from Discord on Linux! This Linux-native
 [![Version](https://img.shields.io/badge/version-1.0.0--linux-blue.svg)](https://github.com/DockerDiscordControl/DockerDiscordControl-Linux)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/DockerDiscordControl/DockerDiscordControl-Linux/blob/main/LICENSE)
 [![Linux Optimized](https://img.shields.io/badge/Linux-Server_Ready-red.svg)](#performance-metrics)
-[![Multi-Architecture](https://img.shields.io/badge/Arch-AMD64_ARM64-orange.svg)](#installation)
+[![Multi-Architecture](https://img.shields.io/badge/Arch-Intel_AMD_ARM64-orange.svg)](#installation)
 [![Memory Optimized](https://img.shields.io/badge/RAM-~104MB-green.svg)](#performance-metrics)
 
 ## ✨ Features
@@ -92,7 +92,7 @@ Perfect for:
 Contributions welcome! This Linux version focuses on:
 - **Server Performance**: Optimizations for production workloads
 - **Security**: Enterprise-grade security features
-- **Multi-Architecture**: AMD64 and ARM64 support
+- **Multi-Architecture**: Intel/AMD and ARM64 support
 - **Monitoring**: Health checks and observability
 
 ## 📞 Support
