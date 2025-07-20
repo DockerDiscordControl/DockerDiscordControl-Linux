@@ -32,7 +32,7 @@ docker run -d \
   -e DISCORD_BOT_TOKEN=your_bot_token_here \
   -e ALLOWED_CHANNELS=channel_id_1,channel_id_2 \
   -e ALLOWED_ROLES=role_id_1,role_id_2 \
-  -p 8080:8080 \
+  -p 8374:9374 \
   dockerdiscordcontrol/dockerdiscordcontrol-linux:latest
 ```
 
@@ -77,7 +77,7 @@ This Linux-optimized version includes:
 | `ALLOWED_CHANNELS` | Comma-separated channel IDs | ✅ Yes | - |
 | `ALLOWED_ROLES` | Comma-separated role IDs | ✅ Yes | - |
 | `LOG_LEVEL` | Logging level (DEBUG, INFO, WARNING, ERROR) | ❌ No | `INFO` |
-| `WEB_UI_PORT` | Web interface port | ❌ No | `8080` |
+| `WEB_UI_PORT` | Web interface port | ❌ No | `8374` |
 | `MAX_CONTAINERS` | Maximum containers to manage | ❌ No | `100` |
 | `WORKER_THREADS` | Number of worker threads | ❌ No | `4` |
 
@@ -101,7 +101,7 @@ services:
       - LOG_LEVEL=INFO
       - WORKER_THREADS=4
     ports:
-      - "8080:8080"
+      - "8374:9374"
     networks:
       - dockerdiscordcontrol
     labels:
@@ -136,7 +136,7 @@ networks:
 
 ## 🌐 Web Interface
 
-Access the web interface at `http://localhost:8080` for:
+Access the web interface at `http://localhost:8374` for:
 
 - **Real-time Container Monitoring**: Live status and metrics
 - **Configuration Management**: Easy setup and configuration
@@ -184,7 +184,7 @@ docker inspect dockerdiscordcontrol-linux | grep -A5 Health
 docker stats dockerdiscordcontrol-linux
 
 # View detailed metrics
-curl http://localhost:8080/metrics
+curl http://localhost:8374/metrics
 ```
 
 ## 🛠️ Troubleshooting
