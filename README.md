@@ -144,6 +144,11 @@ Access the web interface at `http://localhost:8374` for:
 - **Task Scheduler**: Automated container operations
 - **Performance Dashboard**: Resource usage and optimization
 
+**🚨 IMPORTANT - Default Login Credentials:**
+- **Username**: `admin`
+- **Password**: `admin`
+- **⚠️ CHANGE IMMEDIATELY** after first login for security!
+
 ## 🔒 Security Features
 
 ### Built-in Security
