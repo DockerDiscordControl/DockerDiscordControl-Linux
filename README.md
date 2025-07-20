@@ -1,108 +1,279 @@
-# DockerDiscordControl for Linux 🐧
+# DockerDiscordControl - Linux Edition
 
-Control your Docker containers directly from Discord on Linux! This Linux-native version provides a Discord bot and web interface specifically built for **Linux servers** with **multi-architecture support** and **production-ready optimizations**.
+[![Docker Hub](https://img.shields.io/docker/v/dockerdiscordcontrol/dockerdiscordcontrol-linux?label=docker%20hub)](https://hub.docker.com/r/dockerdiscordcontrol/dockerdiscordcontrol-linux)
+[![Docker Pulls](https://img.shields.io/docker/pulls/dockerdiscordcontrol/dockerdiscordcontrol-linux)](https://hub.docker.com/r/dockerdiscordcontrol/dockerdiscordcontrol-linux)
+[![Image Size](https://img.shields.io/docker/image-size/dockerdiscordcontrol/dockerdiscordcontrol-linux/latest)](https://hub.docker.com/r/dockerdiscordcontrol/dockerdiscordcontrol-linux)
 
-[![Version](https://img.shields.io/badge/version-1.0.0--linux-blue.svg)](https://github.com/DockerDiscordControl/DockerDiscordControl-Linux)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/DockerDiscordControl/DockerDiscordControl-Linux/blob/main/LICENSE)
-[![Linux Optimized](https://img.shields.io/badge/Linux-Server_Ready-red.svg)](#performance-metrics)
-[![Multi-Architecture](https://img.shields.io/badge/Arch-Intel_AMD_ARM64-orange.svg)](#installation)
-[![Memory Optimized](https://img.shields.io/badge/RAM-~104MB-green.svg)](#performance-metrics)
+**Control your Docker containers directly from Discord on Linux systems!**
 
-## ✨ Features
+DockerDiscordControl-Linux is optimized for Linux server environments, providing high-performance Docker container management through Discord bot commands with server-grade reliability and security.
 
-- **Discord Bot**: Full slash command interface for container management
-- **Web Interface**: Secure configuration panel with real-time monitoring
-- **Container Control**: Start, stop, restart any Docker container from Discord  
-- **Real-time Status**: Live container statistics and health monitoring
-- **Scheduled Tasks**: Automated container actions (daily, weekly, monthly)
-- **Multi-Language Support**: English, German, French
-- **Security**: Channel-based permissions and rate limiting
-- **Production Ready**: Optimized for Linux server environments
+**🌐 Homepage: [https://ddc.bot](https://ddc.bot)**
 
-## 🐧 Linux-Native Features
+## 🚀 Quick Start
 
-#### **Multi-Architecture Support**
-- **AMD64**: Full support for Intel/AMD x64 processors
-- **ARM64**: Native support for ARM-based servers (Raspberry Pi, AWS Graviton, etc.)
-- **Cross-Platform Build**: Automatic architecture detection and optimization
-- **Native Performance**: No emulation layers required
+### Using Docker Hub
 
-#### **Linux Server Optimizations**
-- **Server Performance**: Higher CPU (2.0 cores) and memory (512MB) limits
-- **Resource Scaling**: Auto-scaling with CPU core count
-- **Security Hardened**: Non-root user execution, security options, permissions management
-- **Health Monitoring**: Built-in health checks and graceful shutdowns
-- **Network Isolation**: Dedicated Docker network for security
+```bash
+# Pull the latest Linux-optimized image
+docker pull dockerdiscordcontrol/dockerdiscordcontrol-linux:latest
 
-## 🚀 Performance Metrics
+# Run with Docker Compose
+docker-compose up -d
+```
 
-- **Memory Usage**: ~104MB typical usage (tested and verified)
-- **CPU Usage**: <3% on 4-core server during normal operation  
-- **Container Startup**: ~15-25 seconds on modern Linux servers
-- **Build Time**: ~3-5 minutes on typical VPS/cloud instance
-- **Concurrent Connections**: Up to 1000 connections per worker
+### Using Docker Run
 
-## 🛠️ Quick Installation
+```bash
+docker run -d \
+  --name dockerdiscordcontrol-linux \
+  -v /var/run/docker.sock:/var/run/docker.sock:ro \
+  -v ./config:/app/config \
+  -e DISCORD_BOT_TOKEN=your_bot_token_here \
+  -e ALLOWED_CHANNELS=channel_id_1,channel_id_2 \
+  -e ALLOWED_ROLES=role_id_1,role_id_2 \
+  -p 8080:8080 \
+  dockerdiscordcontrol/dockerdiscordcontrol-linux:latest
+```
 
-### **1. Clone Repository**
-git clone https://github.com/DockerDiscordControl/DockerDiscordControl-Linux.git
-cd DockerDiscordControl-Linux
+## ✨ Linux-Specific Features
 
-### **2. Environment Setup**
-cp env.template .env
-echo "FLASK_SECRET_KEY=$(openssl rand -hex 32)" >> .env
-nano .env  # Add DISCORD_BOT_TOKEN and DISCORD_GUILD_ID
+- **High-Performance Server Optimization**: Tuned for Linux server environments
+- **Systemd Integration**: Native systemd service management support  
+- **Advanced Process Management**: Multi-threaded container operations
+- **Memory Optimization**: Efficient memory usage for production workloads
+- **Security Hardening**: SELinux/AppArmor compatibility with enhanced security
 
-### **3. Start DDC-Linux**
-./test-linux-setup.sh  # Validate setup (optional)
-docker compose up --build -d
+## 🏗️ Architecture
 
-### **4. Access Web Interface**
-- **URL**: http://localhost:8374
-- **Default Login**: Username admin, Password admin
-- **⚠️ CHANGE PASSWORD IMMEDIATELY!**
+This Linux-optimized version includes:
 
-## 📊 Production Deployment
+- **Alpine Linux Base**: Ultra-lightweight and secure foundation
+- **Python 3.13**: Latest Python runtime with Linux optimizations
+- **Supervisor**: Advanced process management for server environments
+- **Multi-Architecture**: Supports AMD64, ARM64, and ARM7 platforms
 
-Perfect for:
-- **VPS/Cloud Servers** (AWS, DigitalOcean, Linode, etc.)
-- **Raspberry Pi** (ARM64 native support)
-- **Container Orchestration** (Docker Swarm, Kubernetes)
-- **Enterprise Environments** (Multi-user, security-hardened)
+## 📋 Requirements
 
-## 🔐 Security Features
+### System Requirements
+- **Linux Distribution**: Ubuntu 20.04+, Debian 11+, CentOS 8+, RHEL 8+, or Alpine
+- **Docker Engine**: 20.10+ or Docker CE
+- **Architecture**: AMD64, ARM64, or ARM7
+- **Memory**: Minimum 256MB RAM (512MB+ recommended)
+- **Storage**: 200MB+ free disk space
 
-- **Non-root Execution**: Container runs as UID/GID 1000
-- **Security Hardening**: no-new-privileges and container isolation
-- **Docker Socket Security**: Read-only access to Docker socket
-- **Network Isolation**: Dedicated ddc-linux-network
-- **Authentication**: Web interface requires login
-- **Channel Permissions**: Fine-grained Discord access control
+### Discord Requirements
+- Discord bot token with necessary permissions
+- Guild/server with appropriate permissions
+- Channel IDs for command execution
 
-## 📚 Documentation
+## 🔧 Configuration
 
-- **README.md**: This comprehensive guide
-- **INSTALL_LINUX.md**: Detailed installation instructions
-- **QUICK_START.md**: Fast deployment guide
-- **TROUBLESHOOTING.md**: Common problem solutions
-- **SECURITY.md**: Security best practices
+### Environment Variables
 
-## 🤝 Contributing
+| Variable | Description | Required | Default |
+|----------|-------------|----------|---------|
+| `DISCORD_BOT_TOKEN` | Your Discord bot token | ✅ Yes | - |
+| `ALLOWED_CHANNELS` | Comma-separated channel IDs | ✅ Yes | - |
+| `ALLOWED_ROLES` | Comma-separated role IDs | ✅ Yes | - |
+| `LOG_LEVEL` | Logging level (DEBUG, INFO, WARNING, ERROR) | ❌ No | `INFO` |
+| `WEB_UI_PORT` | Web interface port | ❌ No | `8080` |
+| `MAX_CONTAINERS` | Maximum containers to manage | ❌ No | `100` |
+| `WORKER_THREADS` | Number of worker threads | ❌ No | `4` |
 
-Contributions welcome! This Linux version focuses on:
-- **Server Performance**: Optimizations for production workloads
-- **Security**: Enterprise-grade security features
-- **Multi-Architecture**: Intel/AMD and ARM64 support
-- **Monitoring**: Health checks and observability
+### Docker Compose Example
 
-## 📞 Support
+```yaml
+version: '3.8'
+services:
+  dockerdiscordcontrol:
+    image: dockerdiscordcontrol/dockerdiscordcontrol-linux:latest
+    container_name: dockerdiscordcontrol-linux
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./config:/app/config
+      - ./logs:/app/logs
+    environment:
+      - DISCORD_BOT_TOKEN=${DISCORD_BOT_TOKEN}
+      - ALLOWED_CHANNELS=${ALLOWED_CHANNELS}
+      - ALLOWED_ROLES=${ALLOWED_ROLES}
+      - LOG_LEVEL=INFO
+      - WORKER_THREADS=4
+    ports:
+      - "8080:8080"
+    networks:
+      - dockerdiscordcontrol
+    labels:
+      - "com.dockerdiscordcontrol.version=1.0.3"
+      - "com.dockerdiscordcontrol.platform=linux"
 
-- **GitHub Issues**: [Report problems](https://github.com/DockerDiscordControl/DockerDiscordControl-Linux/issues)
-- **Discussions**: [Community help](https://github.com/DockerDiscordControl/DockerDiscordControl-Linux/discussions)
-- **Wiki**: [Detailed guides](https://github.com/DockerDiscordControl/DockerDiscordControl-Linux/wiki)
+networks:
+  dockerdiscordcontrol:
+    driver: bridge
+```
+
+## 🎮 Discord Commands
+
+### Container Management
+- `/docker ps` - List running containers
+- `/docker start <container>` - Start a container
+- `/docker stop <container>` - Stop a container
+- `/docker restart <container>` - Restart a container
+- `/docker logs <container>` - View container logs
+- `/docker stats` - Show container statistics
+
+### System Information
+- `/system info` - Display system information
+- `/system resources` - Show resource usage
+- `/docker version` - Docker version information
+
+### Advanced Commands
+- `/compose up <service>` - Start Docker Compose services
+- `/compose down` - Stop Docker Compose services
+- `/network ls` - List Docker networks
+- `/volume ls` - List Docker volumes
+
+## 🌐 Web Interface
+
+Access the web interface at `http://localhost:8080` for:
+
+- **Real-time Container Monitoring**: Live status and metrics
+- **Configuration Management**: Easy setup and configuration
+- **Log Viewer**: Centralized log management
+- **Task Scheduler**: Automated container operations
+- **Performance Dashboard**: Resource usage and optimization
+
+## 🔒 Security Features
+
+### Built-in Security
+- **Role-based Access Control**: Discord role verification
+- **Channel Restrictions**: Limit commands to specific channels
+- **Command Auditing**: Full audit trail of all commands
+- **Rate Limiting**: Prevention of command spam
+- **Input Validation**: Sanitized command parameters
+
+### Linux Security Integration
+- **SELinux Compatibility**: Full support for SELinux environments
+- **AppArmor Profiles**: Security profiles for Ubuntu/Debian systems
+- **User Namespace Support**: Enhanced container isolation
+- **Capability Management**: Fine-grained privilege control
+
+## 🔍 Monitoring & Logging
+
+### Log Levels
+- **DEBUG**: Detailed debugging information
+- **INFO**: General operational messages
+- **WARNING**: Warning messages for attention
+- **ERROR**: Error conditions
+
+### Health Checks
+The container includes built-in health checks:
+
+```bash
+# Check container health
+docker inspect --format='{{.State.Health.Status}}' dockerdiscordcontrol-linux
+
+# View health check logs
+docker inspect dockerdiscordcontrol-linux | grep -A5 Health
+```
+
+### Performance Monitoring
+```bash
+# Monitor resource usage
+docker stats dockerdiscordcontrol-linux
+
+# View detailed metrics
+curl http://localhost:8080/metrics
+```
+
+## 🛠️ Troubleshooting
+
+### Common Issues
+
+#### Bot Not Responding
+```bash
+# Check bot token and permissions
+docker logs dockerdiscordcontrol-linux --tail 50
+
+# Verify Discord connectivity
+docker exec dockerdiscordcontrol-linux python -c "import discord; print('Discord.py version:', discord.__version__)"
+```
+
+#### Docker Socket Issues
+```bash
+# Verify Docker socket permissions
+ls -la /var/run/docker.sock
+
+# Test Docker connectivity
+docker exec dockerdiscordcontrol-linux docker version
+```
+
+#### Linux-Specific Issues
+- Ensure Docker daemon is running: `systemctl status docker`
+- Check firewall settings: `ufw status` or `iptables -L`
+- Verify user permissions: `groups $USER`
+
+### Performance Optimization
+- Adjust `WORKER_THREADS` based on CPU cores
+- Increase `MAX_CONTAINERS` for large deployments
+- Use specific tags instead of `latest` for production
+- Enable log rotation for long-running deployments
+
+## 📦 Tags & Versions
+
+| Tag | Description | Architecture |
+|-----|-------------|--------------|
+| `latest` | Latest stable release | `linux/amd64`, `linux/arm64`, `linux/arm/v7` |
+| `1.0.3` | Version 1.0.3 | `linux/amd64`, `linux/arm64`, `linux/arm/v7` |
+| `alpine` | Alpine Linux base | `linux/amd64`, `linux/arm64`, `linux/arm/v7` |
+| `debian` | Debian Slim base | `linux/amd64`, `linux/arm64` |
+
+## 🤝 Support
+
+### Documentation
+- **🌐 Official Homepage**: [https://ddc.bot](https://ddc.bot)
+- **Main Repository (Unraid)**: [DockerDiscordControl](https://github.com/DockerDiscordControl/DockerDiscordControl)
+- **Linux Repository**: [DockerDiscordControl-Linux](https://github.com/DockerDiscordControl/DockerDiscordControl-Linux)
+- **Installation Guide**: [Linux Setup Instructions](https://github.com/DockerDiscordControl/DockerDiscordControl/blob/main/INSTALL_LINUX.md)
+- **Wiki**: [Comprehensive Documentation](https://github.com/DockerDiscordControl/DockerDiscordControl/wiki)
+
+### Community
+- **Discord Server**: Join our community for support
+- **GitHub Issues**: Report bugs and feature requests
+- **GitHub Discussions**: Community Q&A and discussions
+
+### Professional Support
+For enterprise support and custom implementations, please contact our team through GitHub.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/DockerDiscordControl/DockerDiscordControl/blob/main/LICENSE) file for details.
+
+## 🎉 Contributing
+
+We welcome contributions! Please see our [Contributing Guide](https://github.com/DockerDiscordControl/DockerDiscordControl/blob/main/CONTRIBUTING.md) for details.
+
+## 💝 Support DDC Development
+
+Help keep DockerDiscordControl growing and improving for Linux server environments:
+
+- **[☕ Buy Me A Coffee](https://buymeacoffee.com/dockerdiscordcontrol)** - Quick one-time support for development
+- **[💳 PayPal Donation](https://www.paypal.com/donate/?hosted_button_id=DOCKERDISCORDCONTROL)** - Direct contribution to the project  
+- **[💖 GitHub Sponsors](https://github.com/sponsors/DockerDiscordControl)** - Ongoing monthly support
+
+**Your support helps:**
+- 🛠️ Maintain DDC for Linux with latest Docker Engine compatibility
+- ✨ Develop new Linux-specific features and server optimizations  
+- 🔒 Keep DockerDiscordControl zero-vulnerability secure for production environments
+- 📚 Create comprehensive Linux server documentation and guides
+- 🚀 Performance optimizations for high-performance Linux deployments
+
+**Thank you for supporting open source development!** 🙏
 
 ---
 
-**Built with ❤️ for Linux system administrators** ��🐳
+**Made with ❤️ for the Linux server community**
 
-**Perfect for production Linux servers, VPS, cloud instances, and container orchestration!**
+[![GitHub](https://img.shields.io/badge/GitHub-DockerDiscordControl-blue?logo=github)](https://github.com/DockerDiscordControl)
+[![Docker Hub](https://img.shields.io/badge/Docker%20Hub-dockerdiscordcontrol-blue?logo=docker)](https://hub.docker.com/u/dockerdiscordcontrol)
