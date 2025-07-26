@@ -1,4 +1,4 @@
-name: Build and Push Docker Image - Linux
+name: 🐳🐧 Linux Docker Hub Push (Multi-Arch)
 
 on:
   push:
