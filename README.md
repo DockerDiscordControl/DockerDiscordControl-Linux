@@ -1,22 +1,12 @@
-# DockerDiscordControl v2.1 - Linux Edition
+# DockerDiscordControl v2.1 🐳
 
-[![Version](https://img.shields.io/badge/Version-v2.1.0-brightgreen?style=for-the-badge)](https://github.com/DockerDiscordControl/DockerDiscordControl-Linux/releases/tag/v2.1.0) [![Python](https://img.shields.io/badge/Python-3.12-blue?style=for-the-badge)](https://python.org) [![Base Image](https://img.shields.io/badge/Base-Alpine%203.22.2-blueviolet?style=for-the-badge)](#-ultra-optimized-alpine-image) [![Tests](https://img.shields.io/badge/Tests-Passing-success?style=for-the-badge)](#-testing--quality-assurance) [![Coverage](https://img.shields.io/badge/Coverage-80%25-brightgreen?style=for-the-badge)](#-testing--quality-assurance) [![Docker Pulls](https://img.shields.io/docker/pulls/dockerdiscordcontrol/dockerdiscordcontrol-linux?style=for-the-badge)](https://hub.docker.com/r/dockerdiscordcontrol/dockerdiscordcontrol-linux) [![Wiki](https://img.shields.io/badge/Documentation-Wiki-lightgrey?style=for-the-badge)](https://github.com/DockerDiscordControl/DockerDiscordControl-Linux/wiki)
+[![Version](https://img.shields.io/badge/Version-v2.1.0-brightgreen?style=for-the-badge)](https://github.com/DockerDiscordControl/DockerDiscordControl/releases/tag/v2.1.0) [![Python](https://img.shields.io/badge/Python-3.12-blue?style=for-the-badge)](https://python.org) [![Base Image](https://img.shields.io/badge/Base-Alpine%203.22.2-blueviolet?style=for-the-badge)](#-ultra-optimized-alpine-image) [![Tests](https://img.shields.io/badge/Tests-Passing-success?style=for-the-badge)](#-testing--quality-assurance) [![Coverage](https://img.shields.io/badge/Coverage-80%25-brightgreen?style=for-the-badge)](#-testing--quality-assurance) [![Docker Pulls](https://img.shields.io/docker/pulls/dockerdiscordcontrol/dockerdiscordcontrol?style=for-the-badge)](https://hub.docker.com/r/dockerdiscordcontrol/dockerdiscordcontrol) [![Unraid](https://img.shields.io/badge/Unraid-Community%20Apps-orange?style=for-the-badge)](./docs/UNRAID.md) [![Wiki](https://img.shields.io/badge/Documentation-Wiki-lightgrey?style=for-the-badge)](https://github.com/DockerDiscordControl/DockerDiscordControl/wiki)
 
 A powerful Discord bot and web interface to manage Docker containers remotely. This application bridges the gap between Discord and your Docker environment, allowing container monitoring and control directly through Discord channels.
 
 **Homepage:** [https://ddc.bot](https://ddc.bot) | **[Complete Documentation](../../wiki)**
 
 Control your Docker containers directly from Discord! This application provides a Discord bot and a web interface to manage Docker containers (start, stop, restart, view status) with a focus on stability, security, and performance. The default image is an ultra-optimized Alpine Linux build with the latest security patches and enhanced performance.
-
-## Linux-Optimized Version
-
-**This is the Linux-optimized version of DockerDiscordControl, specifically designed for:**
-- Native Docker support (no Docker Desktop required)
-- Server deployments (Ubuntu, Debian, CentOS, RHEL, Fedora, Arch)
-- Headless servers and VPS environments
-- Multi-architecture support: amd64 and arm64 (Raspberry Pi, ARM servers)
-- Systemd integration and native Linux tooling
-- Optimized for production Linux environments
 
 ## 🆕 Latest Updates
 
@@ -84,12 +74,12 @@ Control your Docker containers directly from Discord! This application provides 
 - Enhanced token encryption and validation
 
 🐛 **Critical Fixes:**
-- **FIXED:** Port mapping consistency (9374) for deployment
+- **FIXED:** Port mapping consistency (9374) for Unraid deployment
 - Interaction timeout issues with defer() pattern
 - Container control reliability improvements
 - Web UI configuration persistence
 
-**🚀 Perfect for Linux servers! Now with Auto-Action System for automatic updates and Status Watchdog for offline alerts!**
+**🚀 Ready for Unraid Community Applications! Now with Auto-Action System for automatic updates and Status Watchdog for offline alerts!**
 
 ## Platform Selection
 
@@ -98,16 +88,16 @@ Control your Docker containers directly from Discord! This application provides 
 | Platform | Repository | Description | Best For |
 |----------|------------|-------------|----------|
 | **Windows** | **[DockerDiscordControl-Windows](https://github.com/DockerDiscordControl/DockerDiscordControl-Windows)** | Windows Docker Desktop optimized | Windows 10/11 + Docker Desktop |
-| **Linux** | **[DockerDiscordControl-Linux](https://github.com/DockerDiscordControl/DockerDiscordControl-Linux)** *(this repo)* | Native Linux optimization | Ubuntu, Debian, CentOS, RHEL |
+| **Linux** | **[DockerDiscordControl-Linux](https://github.com/DockerDiscordControl/DockerDiscordControl-Linux)** | Native Linux optimization | Ubuntu, Debian, CentOS, RHEL |
 | **macOS** | **[DockerDiscordControl-Mac](https://github.com/DockerDiscordControl/DockerDiscordControl-Mac)** | Apple Silicon & Intel Mac optimized | macOS + Docker Desktop |
-| **Universal** | **[DockerDiscordControl](https://github.com/DockerDiscordControl/DockerDiscordControl)** | Multi-platform, Unraid focus | Unraid, NAS, servers |
+| **Universal** | **[DockerDiscordControl](https://github.com/DockerDiscordControl/DockerDiscordControl)** *(this repo)* | Multi-platform, Unraid focus | Unraid, NAS, servers |
 
 ### Quick Platform Selection:
 
 - **Windows Users** → [**Windows Version**](https://github.com/DockerDiscordControl/DockerDiscordControl-Windows) *(PowerShell scripts, WSL2 optimized)*
-- **Linux Users** → **Use this repository** *(Native systemd, package managers)*
+- **Linux Users** → [**Linux Version**](https://github.com/DockerDiscordControl/DockerDiscordControl-Linux) *(Native systemd, package managers)*  
 - **macOS Users** → [**Mac Version**](https://github.com/DockerDiscordControl/DockerDiscordControl-Mac) *(Apple Silicon + Intel, Homebrew)*
-- **Unraid/NAS Users** → [**Universal Version**](https://github.com/DockerDiscordControl/DockerDiscordControl) *(Community Apps support)*
+- **Unraid/NAS Users** → **Use this repository** *(Universal, Community Apps support)*
 
 ---
 
@@ -214,7 +204,7 @@ pytest
 pytest --cov=services --cov=app --cov=utils --cov-report=html
 
 # Open coverage report
-xdg-open htmlcov/index.html  # Linux
+open htmlcov/index.html
 ```
 
 ### Development Branch
@@ -250,18 +240,47 @@ DDC includes HTTP Basic Auth and rate limiting, but these are designed for trust
 
 ## 🚀 Quick Start
 
-### **Linux Installation (This Repository)**
+### **Platform-Specific Installation (Recommended)**
 
-**Optimized for native Linux Docker environments:**
+**Choose your platform for optimized experience:**
+
+#### **Windows Users**
+Visit: **[DockerDiscordControl-Windows](https://github.com/DockerDiscordControl/DockerDiscordControl-Windows)**
+```powershell
+# Clone Windows-optimized version
+git clone https://github.com/DockerDiscordControl/DockerDiscordControl-Windows.git
+cd DockerDiscordControl-Windows
+# Follow Windows-specific setup guide
+```
+
+#### **Linux Users** 
+Visit: **[DockerDiscordControl-Linux](https://github.com/DockerDiscordControl/DockerDiscordControl-Linux)**
+```bash
+# Clone Linux-optimized version
+git clone https://github.com/DockerDiscordControl/DockerDiscordControl-Linux.git
+cd DockerDiscordControl-Linux
+# Follow Linux-specific setup guide
+```
+
+#### **macOS Users**
+Visit: **[DockerDiscordControl-Mac](https://github.com/DockerDiscordControl/DockerDiscordControl-Mac)**
+```bash
+# Clone Mac-optimized version  
+git clone https://github.com/DockerDiscordControl/DockerDiscordControl-Mac.git
+cd DockerDiscordControl-Mac
+# Follow macOS-specific setup guide
+```
+
+---
+
+### **Universal Installation (Unraid & Servers)**
+
+**For Unraid, NAS systems, and server deployments:**
 
 #### Prerequisites
 
 1. **Create Discord Bot**: [Bot Setup Guide](../../wiki/Discord‐Bot‐Setup)
-2. **Docker**: [Install Docker Engine](https://docs.docker.com/engine/install/) (native Docker, not Docker Desktop)
-   - Ubuntu/Debian: `sudo apt-get install docker.io docker-compose`
-   - CentOS/RHEL: `sudo yum install docker docker-compose`
-   - Fedora: `sudo dnf install docker docker-compose`
-   - Arch: `sudo pacman -S docker docker-compose`
+2. **Docker**: [Install Docker](https://docs.docker.com/engine/install/) + [Docker Compose](https://docs.docker.com/compose/install/)
 
 #### Installation Methods
 
@@ -269,11 +288,11 @@ DDC includes HTTP Basic Auth and rate limiting, but these are designed for trust
 
 ```bash
 # Clone repository
-git clone https://github.com/DockerDiscordControl/DockerDiscordControl-Linux.git
-cd DockerDiscordControl-Linux
+git clone https://github.com/DockerDiscordControl/DockerDiscordControl.git
+cd DockerDiscordControl
 
 # Create directories
-mkdir -p config logs
+mkdir config logs
 
 # Create .env file with secure secret key
 echo "FLASK_SECRET_KEY=$(openssl rand -hex 32)" > .env
@@ -285,7 +304,7 @@ docker compose up --build -d
 **Method 2: Docker Hub (Direct)**
 
 ```bash
-# Pull and run latest Alpine-optimized Linux image
+# Pull and run latest Alpine-optimized image
 docker run -d --name ddc \
   -p 9374:9374 \
   -v /var/run/docker.sock:/var/run/docker.sock \
@@ -293,19 +312,14 @@ docker run -d --name ddc \
   -v ./logs:/app/logs \
   -e FLASK_SECRET_KEY="$(openssl rand -hex 32)" \
   --restart unless-stopped \
-  dockerdiscordcontrol/dockerdiscordcontrol-linux:latest
+  dockerdiscordcontrol/dockerdiscordcontrol:latest
 ```
 
-**Method 3: Systemd Integration (Linux-specific)**
-
-```bash
-# Create systemd service for automatic startup
-sudo systemctl enable docker
-sudo systemctl start docker
-
-# DDC will automatically restart with the Docker daemon
-# Use --restart unless-stopped flag as shown in Method 2
-```
+**Method 3: Unraid (Recommended for Unraid users)**
+- Install via **Community Applications**
+- Search for "DockerDiscordControl"
+- **One-click install** with pre-configured paths
+- [📖 Detailed Unraid Setup](docs/UNRAID.md)
 
 #### First-Time Setup
 
@@ -314,7 +328,7 @@ sudo systemctl start docker
 1. **Access Web UI**: `http://<your-server-ip>:9374`
 2. **Setup Options**:
    - **Method 1**: Visit `/setup` for guided web setup
-   - **Method 2**: Use temporary credentials: `admin` / `setup`
+   - **Method 2**: Use temporary credentials: `admin` / `setup` 
    - **Method 3**: Set `DDC_ADMIN_PASSWORD=your_password` before starting
 
 3. **Complete Setup**: Configure bot token, Guild ID, container permissions
@@ -323,36 +337,6 @@ sudo systemctl start docker
 **Security Note**: Default password is 'setup' for initial access. MUST be changed immediately after first login for security!
 
 **Upgrade from v1.1.3D**: Automatic migration! Your existing `config.json` will be automatically split into modular files and backed up. No manual action required.
-
----
-
-### **Other Platform Installations**
-
-**For other platforms, use the platform-specific repositories:**
-
-#### **Windows Users**
-Visit: **[DockerDiscordControl-Windows](https://github.com/DockerDiscordControl/DockerDiscordControl-Windows)**
-```powershell
-# Clone Windows-optimized version
-git clone https://github.com/DockerDiscordControl/DockerDiscordControl-Windows.git
-cd DockerDiscordControl-Windows
-# Follow Windows-specific setup guide
-```
-
-#### **macOS Users**
-Visit: **[DockerDiscordControl-Mac](https://github.com/DockerDiscordControl/DockerDiscordControl-Mac)**
-```bash
-# Clone Mac-optimized version
-git clone https://github.com/DockerDiscordControl/DockerDiscordControl-Mac.git
-cd DockerDiscordControl-Mac
-# Follow macOS-specific setup guide
-```
-
-#### **Unraid/NAS Users**
-Visit: **[DockerDiscordControl (Universal)](https://github.com/DockerDiscordControl/DockerDiscordControl)**
-- Install via **Community Applications** (Unraid)
-- Search for "DockerDiscordControl"
-- **One-click install** with pre-configured paths
 
 ## Environment Variables
 
@@ -477,13 +461,13 @@ The default build for this repository is now the stable, optimized Alpine image.
 
 **Ultra-optimized Alpine Linux image:**
 - **Size:** 176MB with multi-stage build optimization
-- **Base:** Alpine Linux 3.22.2 (latest secure version)
+- **Base:** Alpine Linux 3.22.2 (latest secure version)  
 - **Architecture:** Service-oriented modular design (v2.0)
 - **Security:** Latest dependencies with all CVEs fixed
 - **Performance:** Optimized for minimal resource usage and fast startup
 
 ```bash
-docker pull dockerdiscordcontrol/dockerdiscordcontrol-linux:latest
+docker pull dockerdiscordcontrol/dockerdiscordcontrol:latest
 ```
 
 ## System Requirements
@@ -496,23 +480,22 @@ docker pull dockerdiscordcontrol/dockerdiscordcontrol-linux:latest
 
 ### **Production Limits**
 - **Maximum Containers**: 50 Docker containers
-- **Maximum Channels**: 15 Discord channels
+- **Maximum Channels**: 15 Discord channels  
 - **Concurrent Operations**: 10 pending Docker actions
 - **Cache Size**: 50 status entries with intelligent cleanup
 
 ### **Platform Support**
 
-#### **🐧 This Linux Repository**
-- **Native Docker**: x86_64, ARM64 (Raspberry Pi, ARM servers)
-- **Distributions**: Ubuntu, Debian, CentOS, RHEL, Fedora, Arch, openSUSE
-- **Server Types**: Bare metal, VPS, cloud instances (AWS, GCP, Azure, DigitalOcean)
-- **Docker Orchestration**: Swarm, Compose, Standalone
-- **Systemd Integration**: Native service management
+#### **🔧 This Universal Repository**
+- **Unraid**: Native Community Applications support ⭐
+- **Linux Servers**: x86_64, ARM64 (Raspberry Pi)
+- **Docker**: Swarm, Compose, Standalone
+- **NAS**: Synology, QNAP, TrueNAS
 
 #### **🎯 Platform-Optimized Repositories**
 - **🪟 [Windows](https://github.com/DockerDiscordControl/DockerDiscordControl-Windows)**: Docker Desktop, WSL2, PowerShell integration
+- **🐧 [Linux](https://github.com/DockerDiscordControl/DockerDiscordControl-Linux)**: Native systemd, package managers, distributions
 - **🍎 [macOS](https://github.com/DockerDiscordControl/DockerDiscordControl-Mac)**: Apple Silicon, Intel, Homebrew, Docker Desktop
-- **🔧 [Universal](https://github.com/DockerDiscordControl/DockerDiscordControl)**: Unraid, NAS systems (Synology, QNAP, TrueNAS)
 
 ## Documentation
 
@@ -526,6 +509,7 @@ docker pull dockerdiscordcontrol/dockerdiscordcontrol-linux:latest
 | [Performance](../../wiki/Performance‐and‐Architecture) | V3.0 optimizations & monitoring |
 | [Alpine Migration](../../wiki/Alpine‐Linux‐Migration) | Benefits, security, optimization |
 | [Memory Optimization](../../wiki/Memory‐Optimization) | Resource management, limits |
+| [Unraid Setup](docs/UNRAID.md) | Community Applications guide |
 | [Troubleshooting](../../wiki/Troubleshooting) | Common issues & solutions |
 | [Development](../../wiki/Development) | Contributing & development setup |
 | [Security](../../wiki/Security) | Best practices & considerations |
@@ -535,7 +519,7 @@ docker pull dockerdiscordcontrol/dockerdiscordcontrol-linux:latest
 **Docker Socket Access Required**: This application requires access to `/var/run/docker.sock` to control containers. Only run in trusted environments and ensure proper host security.
 
 **First-Time Setup Required**: DDC v2.0+ uses temporary default password 'setup' for initial access. Use one of these secure setup methods:
-- **Web Setup**: Visit `/setup` and create your password
+- **Web Setup**: Visit `/setup` and create your password  
 - **Temporary Access**: Login with `admin` / `setup`, then set real password
 - **Environment Variable**: Set `DDC_ADMIN_PASSWORD` before starting container
 
@@ -561,7 +545,7 @@ We welcome contributions! See our [Development Guide](../../wiki/Development) fo
 
 **Contributing to Platform-Specific Versions:**
 - **Windows**: [Contribute to Windows version](https://github.com/DockerDiscordControl/DockerDiscordControl-Windows)
-- **Linux**: [Contribute to Linux version](https://github.com/DockerDiscordControl/DockerDiscordControl-Linux) *(this repo)*
+- **Linux**: [Contribute to Linux version](https://github.com/DockerDiscordControl/DockerDiscordControl-Linux)
 - **macOS**: [Contribute to Mac version](https://github.com/DockerDiscordControl/DockerDiscordControl-Mac)
 
 ## License
@@ -572,9 +556,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Like DDC? Star the repository!** | **Found a bug?** [Report it](../../issues) | **Feature idea?** [Suggest it](../../discussions)
 
-**Don't forget to star the platform-specific repos too!**
+**Don't forget to star the platform-specific repos too!** 
 - **[Windows](https://github.com/DockerDiscordControl/DockerDiscordControl-Windows)**
-- **[Linux](https://github.com/DockerDiscordControl/DockerDiscordControl-Linux)** *(this repo)*
+- **[Linux](https://github.com/DockerDiscordControl/DockerDiscordControl-Linux)**  
 - **[macOS](https://github.com/DockerDiscordControl/DockerDiscordControl-Mac)**
 
 ## Support DDC Development
@@ -582,9 +566,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 Help keep DockerDiscordControl growing and improving across all platforms:
 
 - **[Buy Me A Coffee](https://buymeacoffee.com/dockerdiscordcontrol)** - Quick one-time support
-- **[PayPal Donation](https://www.paypal.com/donate/?hosted_button_id=XKVC6SFXU2GW4)** - Direct contribution
+- **[PayPal Donation](https://www.paypal.com/donate/?hosted_button_id=XKVC6SFXU2GW4)** - Direct contribution  
 
-Your support helps maintain DDC across **Windows, Linux, macOS, and Universal** versions, develop new features, and keep it zero-vulnerability secure!
+Your support helps maintain DDC across **Windows, Linux, macOS, and Universal** versions, develop new features, and keep it zero-vulnerability secure! 
 
 ## Credits & Contributors
 
