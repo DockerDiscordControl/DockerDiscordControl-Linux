@@ -1,3 +1,13 @@
+> [!IMPORTANT]
+> **This repository is archived and stays at v2.4.1.** DockerDiscordControl is one image for
+> every platform (Linux, Mac, Windows; amd64 and arm64). Development, releases and
+> documentation continue in the main repository:
+> **[DockerDiscordControl/DockerDiscordControl](https://github.com/DockerDiscordControl/DockerDiscordControl)**.
+>
+> Docker image: `dockerdiscordcontrol/dockerdiscordcontrol`. The name
+> `dockerdiscordcontrol/dockerdiscordcontrol-linux` carries the same image and keeps receiving updates
+> (v3.0.0 and later), so an existing setup does not have to change.
+
 # DockerDiscordControl v2.4.1 🐳
 
 [![Version](https://img.shields.io/badge/Version-v2.4.1-brightgreen?style=for-the-badge)](https://github.com/DockerDiscordControl/DockerDiscordControl/releases/tag/v2.4.1) [![Python](https://img.shields.io/badge/Python-3.14-blue?style=for-the-badge)](https://python.org) [![Base Image](https://img.shields.io/badge/Base-Alpine%203.24-blueviolet?style=for-the-badge)](#-ultra-optimized-alpine-image) [![Tests](https://img.shields.io/badge/Tests-5722%2F5722-success?style=for-the-badge)](#-testing--quality-assurance) [![Coverage](https://img.shields.io/badge/Coverage-71%25-green?style=for-the-badge)](#-testing--quality-assurance) [![Docker Pulls](https://img.shields.io/docker/pulls/dockerdiscordcontrol/dockerdiscordcontrol?style=for-the-badge)](https://hub.docker.com/r/dockerdiscordcontrol/dockerdiscordcontrol) [![Unraid](https://img.shields.io/badge/Unraid-Community%20Apps-orange?style=for-the-badge)](./docs/UNRAID.md) [![Wiki](https://img.shields.io/badge/Documentation-Wiki-lightgrey?style=for-the-badge)](https://github.com/DockerDiscordControl/DockerDiscordControl/wiki)
